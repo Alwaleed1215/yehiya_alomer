@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +30,7 @@
       "alternateName": "Yahya Ahmed Yahya Al Omar Est.",
       "image": "https://imgg.io/images/2026/03/24/1d99f19a6912d93f7a9a9a6f8389c4b1.png",
       "telephone": "+966544784287",
+      "email": "wshfbakm@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "شارع بحر العرب",
@@ -67,8 +68,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ================= المتغيرات والألوان (ثيم الخشب الملكي والذهبي) ================= */
-        :root {
+        /* ================= المتغيرات الأساسية (الوضع الداكن - الافتراضي) ================= */
+        :root[data-theme="dark"] {
             --bg-color: #160e08; 
             --surface-color: #2b1d14; 
             --gold-primary: #d4af37; 
@@ -76,12 +77,33 @@
             --text-light: #f4ece6; 
             --text-muted: #b8a598; 
             --silver: #a07855; 
+            --header-bg: linear-gradient(90deg, #110a06 0%, #2b1d14 50%, #110a06 100%);
+            --hero-bg: radial-gradient(circle at center, #352317 0%, #160e08 100%);
+            --card-bg: linear-gradient(145deg, #2b1d14, #160e08);
+            --icon-bg: linear-gradient(145deg, #3a271c, #1f140e);
+            --footer-bg: #080503;
+        }
+
+        /* ================= المتغيرات للوضع المضيء (اللايت مود) ================= */
+        :root[data-theme="light"] {
+            --bg-color: #fdfbf7; 
+            --surface-color: #f4ece6; 
+            --gold-primary: #b8860b; /* ذهبي أغمق للتباين */
+            --gold-light: #8b6508; 
+            --text-light: #2b1d14; /* نصوص بنية داكنة */
+            --text-muted: #5a4031; 
+            --silver: #8b5a2b; 
+            --header-bg: linear-gradient(90deg, #fdfbf7 0%, #f4ece6 50%, #fdfbf7 100%);
+            --hero-bg: radial-gradient(circle at center, #f4ece6 0%, #fdfbf7 100%);
+            --card-bg: linear-gradient(145deg, #ffffff, #f4ece6);
+            --icon-bg: linear-gradient(145deg, #fdfbf7, #e8dccb);
+            --footer-bg: #eae0d5;
         }
 
         /* الإعدادات العامة والخطوط */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; }
         html, body { width: 100%; overflow-x: hidden; }
-        body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.6; padding-bottom: 90px; }
+        body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.6; padding-bottom: 90px; transition: background-color 0.4s, color 0.4s; }
         body.no-scroll { overflow: hidden; }
 
         /* ================= نظام الـ 3 لغات (AR / EN / UR) ================= */
@@ -126,26 +148,31 @@
             100% { transform: rotate(-360deg) scale(0.95); }
         }
         
-        .loading-text { color: var(--gold-light); font-size: 1.1rem; font-weight: 500; margin-top: 10px; }
+        .loading-text { color: var(--gold-primary); font-size: 1.1rem; font-weight: 500; margin-top: 10px; }
         .dots::after { content: ''; animation: dotsLoader 1.5s steps(4, end) infinite; }
         @keyframes dotsLoader { 0%, 20% { content: ''; } 40% { content: '.'; } 60% { content: '..'; } 80%, 100% { content: '...'; } }
 
         /* الرأس (Header) */
         header {
-            background: linear-gradient(90deg, #110a06 0%, #2b1d14 50%, #110a06 100%);
+            background: var(--header-bg); transition: background 0.4s;
             padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
             border-bottom: 2px solid var(--gold-primary); box-shadow: 0 4px 15px rgba(210, 139, 75, 0.15);
         }
         .header-right { display: flex; align-items: center; gap: 15px; }
-        .site-title { color: var(--gold-primary); font-size: 1.1rem; font-weight: 800; white-space: nowrap; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
-        .menu-btn { color: var(--gold-primary); font-size: 1.5rem; cursor: pointer; background: none; border: none; transition: 0.3s; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5)); }
+        .header-left { display: flex; align-items: center; gap: 10px; }
+        
+        .site-title { color: var(--gold-primary); font-size: 1.1rem; font-weight: 800; white-space: nowrap; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+        .menu-btn { color: var(--gold-primary); font-size: 1.5rem; cursor: pointer; background: none; border: none; transition: 0.3s; }
         .menu-btn:hover { transform: scale(1.1); color: var(--gold-light); }
-        .lang-btn {
+        
+        .lang-btn, .theme-btn {
             background: rgba(210, 139, 75, 0.1); border: 1px solid var(--gold-primary); color: var(--gold-primary);
             padding: 4px 10px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: 0.3s; font-family: sans-serif;
+            display: flex; align-items: center; justify-content: center; height: 32px;
         }
-        .lang-btn:hover { background: var(--gold-primary); color: var(--bg-color); box-shadow: 0 0 10px var(--gold-primary); }
+        .theme-btn { font-size: 1.1rem; width: 32px; padding: 0; }
+        .lang-btn:hover, .theme-btn:hover { background: var(--gold-primary); color: var(--bg-color); box-shadow: 0 0 10px var(--gold-primary); }
 
         /* القائمة الجانبية */
         .side-menu {
@@ -159,14 +186,14 @@
         html[lang="en"] .side-menu.active { left: 0; }
         .side-menu a {
             display: block; padding: 15px 20px; color: var(--text-light); text-decoration: none;
-            font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; font-weight: 500;
+            font-size: 1.1rem; border-bottom: 1px solid rgba(184, 165, 152, 0.1); transition: 0.3s; font-weight: 500;
         }
         html[lang="ar"] .side-menu a:hover, html[lang="ur"] .side-menu a:hover { color: var(--gold-primary); padding-right: 30px; background: rgba(210, 139, 75, 0.1); }
         html[lang="en"] .side-menu a:hover { color: var(--gold-primary); padding-left: 30px; background: rgba(210, 139, 75, 0.1); }
 
         /* الأقسام العامة */
         section { padding: 100px 5% 50px; }
-        .section-title { text-align: center; color: var(--gold-primary); font-size: 2.5rem; margin-bottom: 40px; position: relative; font-weight: 800; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .section-title { text-align: center; color: var(--gold-primary); font-size: 2.5rem; margin-bottom: 40px; position: relative; font-weight: 800; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
         .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold-primary); margin: 10px auto; border-radius: 2px; box-shadow: 0 0 8px var(--gold-primary); }
 
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
@@ -176,58 +203,56 @@
         .hero {
             text-align: center; padding-top: 150px; min-height: 80vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; 
-            background: radial-gradient(circle at center, #352317 0%, #160e08 100%);
+            background: var(--hero-bg); transition: background 0.4s;
         }
         .hero h1 {
             color: var(--gold-primary); font-size: clamp(1.6rem, 4vw, 2.5rem); max-width: 900px;
-            line-height: 1.5; margin-bottom: 20px; text-shadow: 0 4px 15px rgba(0,0,0,0.8); padding: 0 10px;
+            line-height: 1.5; margin-bottom: 20px; padding: 0 10px;
         }
-        .hero p { max-width: 800px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 30px; padding: 0 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        .hero p { max-width: 800px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 30px; padding: 0 15px; font-weight: 500;}
 
         /* من نحن والخدمات */
         .about-text {
-            background: linear-gradient(145deg, #2b1d14, #1a110a); padding: 40px; border-radius: 15px;
+            background: var(--card-bg); padding: 40px; border-radius: 15px; transition: background 0.4s;
             border: 1px solid var(--gold-primary); text-align: center; font-size: 1.1rem; line-height: 1.9;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 15px rgba(210, 139, 75, 0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), inset 0 0 15px rgba(210, 139, 75, 0.05);
         }
         
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
         .service-card {
-            background: linear-gradient(145deg, #2b1d14, #160e08); 
-            border: 2px solid var(--gold-primary); border-radius: 15px; padding: 35px 20px; text-align: center; 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5), inset 0 0 10px rgba(210, 139, 75, 0.1);
+            background: var(--card-bg); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.4s;
+            border: 2px solid var(--gold-primary); border-radius: 15px; padding: 35px 20px; text-align: center; cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1), inset 0 0 10px rgba(210, 139, 75, 0.1);
             position: relative; overflow: hidden;
         }
         .service-card::before {
             content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(210, 139, 75, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(210, 139, 75, 0.15), transparent);
             transform: skewX(-20deg); transition: 0.6s;
         }
         .service-card:hover::before { left: 150%; }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(210, 139, 75, 0.25); background: #22150e; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(210, 139, 75, 0.2); }
         
         .icon-3d-wrapper {
             width: 75px; height: 75px; margin: 0 auto 20px; border-radius: 50%;
-            background: linear-gradient(145deg, #3a271c, #1f140e);
-            box-shadow: 5px 5px 10px #0e0906, -5px -5px 10px #322118;
+            background: var(--icon-bg); transition: background 0.4s, transform 0.4s;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             border: 1px solid rgba(210, 139, 75, 0.4);
-            display: flex; justify-content: center; align-items: center; transition: 0.4s;
+            display: flex; justify-content: center; align-items: center;
         }
-        .icon-3d-wrapper i { font-size: 2.2rem; color: var(--gold-primary); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); transition: 0.4s; }
+        .icon-3d-wrapper i { font-size: 2.2rem; color: var(--gold-primary); transition: 0.4s; }
         .service-card:hover .icon-3d-wrapper { border-color: var(--gold-primary); transform: scale(1.1) rotate(5deg); }
-        .service-card:hover .icon-3d-wrapper i { color: #fff; text-shadow: 0 0 10px var(--gold-primary); }
         
-        .service-card h3 { color: var(--gold-light); margin-bottom: 15px; font-size: 1.4rem; font-weight: 800; }
-        .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; text-align: justify; text-align-last: center; }
+        .service-card h3 { color: var(--gold-primary); margin-bottom: 15px; font-size: 1.4rem; font-weight: 800; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; text-align: justify; text-align-last: center; font-weight: 500; }
 
-        .feature-card { text-align: center; padding: 25px 20px; background: rgba(43, 29, 20, 0.6); border-radius: 15px; border: 1px dashed var(--gold-primary); transition: 0.3s; }
-        .feature-card:hover { border-style: solid; background: rgba(43, 29, 20, 0.9); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(210, 139, 75, 0.1); }
+        .feature-card { text-align: center; padding: 25px 20px; background: var(--surface-color); border-radius: 15px; border: 1px dashed var(--gold-primary); transition: 0.3s; }
+        .feature-card:hover { border-style: solid; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(210, 139, 75, 0.1); }
         .feature-card .icon-3d-wrapper { width: 80px; height: 80px; margin-bottom: 15px; background: transparent; box-shadow: none; border: 2px solid var(--gold-primary); }
         .feature-card .icon-3d-wrapper i { font-size: 2.4rem; }
         .feature-card h3 { margin-bottom: 10px; color: var(--text-light); }
-        .feature-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+        .feature-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; font-weight: 500;}
 
         /* ================= تواصل معنا والخريطة ================= */
         .contact-info { text-align: center; margin-bottom: 40px; padding: 0 10px; }
@@ -240,7 +265,7 @@
         .map-container { 
             position: relative; border-radius: 20px; overflow: hidden; 
             border: 2px solid var(--gold-primary); height: 450px; width: 100%; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
         
         /* فلتر الخريطة التضاريسية */
@@ -256,13 +281,13 @@
         .map-pin-icon { 
             color: #e74c3c; font-size: 3.5rem; margin-bottom: 5px; 
             animation: bouncePin 1.5s infinite cubic-bezier(0.28, 0.84, 0.42, 1); 
-            filter: drop-shadow(0 5px 8px rgba(0,0,0,0.9)); text-shadow: 0 0 15px rgba(210, 139, 75, 0.5); 
+            filter: drop-shadow(0 5px 8px rgba(0,0,0,0.5)); text-shadow: 0 0 15px rgba(210, 139, 75, 0.5); 
         }
         @keyframes bouncePin { 0% { transform: translateY(0); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0); } }
         
         .map-tooltip {
             background: rgba(26, 17, 10, 0.95); backdrop-filter: blur(8px);
-            color: var(--gold-light); padding: 8px 18px; border-radius: 8px; font-weight: bold; 
+            color: var(--gold-primary); padding: 8px 18px; border-radius: 8px; font-weight: bold; 
             border: 1px solid var(--gold-primary); font-size: 0.9rem; white-space: nowrap;
             box-shadow: 0 4px 15px rgba(210, 139, 75, 0.3); animation: pulseTooltip 2s infinite; position: relative; margin-bottom: 5px;
         }
@@ -279,16 +304,17 @@
 
         .service-area-badge {
             position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);
-            background: rgba(0,0,0,0.8); color: var(--gold-light); padding: 6px 20px; border-radius: 20px; font-size: 0.85rem; border: 1px dashed var(--gold-primary);
+            background: rgba(0,0,0,0.8); color: #fff; padding: 6px 20px; border-radius: 20px; font-size: 0.85rem; border: 1px dashed var(--gold-primary);
             pointer-events: none; z-index: 10; font-weight: 700;
         }
 
         /* ================= البار السفلي ================= */
         .bottom-nav {
             position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%);
-            background: linear-gradient(90deg, #110a06 0%, #2b1d14 50%, #110a06 100%); border: 1px solid var(--gold-primary);
+            background: var(--header-bg); border: 1px solid var(--gold-primary);
             border-radius: 35px; display: flex; justify-content: space-around; align-items: center;
-            padding: 5px 10px; width: 90%; max-width: 450px; z-index: 1000; backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+            padding: 5px 10px; width: 90%; max-width: 450px; z-index: 1000; backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: background 0.4s;
         }
         .bottom-nav a {
             color: var(--text-light); text-decoration: none; font-size: 1.1rem; padding: 6px; border-radius: 12px; transition: 0.3s;
@@ -311,12 +337,12 @@
         @keyframes pulseCall { 0% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(210, 139, 75, 0); } 100% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0); } }
 
         /* التذييل */
-        footer { text-align: center; padding: 40px 15px 100px; background-color: #080503; border-top: 2px solid var(--surface-color); }
-        .copyright { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; }
-        .designer-badge, .designer-badge-loader { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--silver); padding: 8px 18px; border-radius: 30px; text-decoration: none; background: linear-gradient(145deg, #2b1d14, #1a110a); transition: 0.3s; text-align: center; max-width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .designer-badge span, .designer-badge-loader span { color: var(--silver); font-weight: bold; font-size: 0.75rem; text-shadow: 0 0 5px rgba(0, 0, 0, 0.8); white-space: normal; transition: 0.3s; }
+        footer { text-align: center; padding: 40px 15px 100px; background-color: var(--footer-bg); border-top: 2px solid var(--surface-color); transition: background 0.4s; }
+        .copyright { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; font-weight: 500;}
+        .designer-badge, .designer-badge-loader { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--silver); padding: 8px 18px; border-radius: 30px; text-decoration: none; background: var(--card-bg); transition: 0.3s; text-align: center; max-width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .designer-badge span, .designer-badge-loader span { color: var(--silver); font-weight: bold; font-size: 0.75rem; white-space: normal; transition: 0.3s; }
         .designer-badge:hover { background: var(--gold-primary); border-color: var(--gold-primary); transform: translateY(-3px); }
-        .designer-badge:hover span { color: #000; text-shadow: none; }
+        .designer-badge:hover span { color: #000; }
 
         /* ================= التجاوب للشاشات الصغيرة ================= */
         @media (max-width: 768px) {
@@ -368,7 +394,12 @@
                 <span class="ur">یحیی آل عمر فاؤنڈیشن</span>
             </div>
         </div>
-        <button id="langToggleBtn" class="lang-btn">EN</button>
+        <div class="header-left">
+            <button id="themeToggleBtn" class="theme-btn" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="langToggleBtn" class="lang-btn">EN</button>
+        </div>
     </header>
 
     <div class="side-menu" id="sideMenu">
@@ -443,7 +474,7 @@
         </div>
     </section>
 
-    <section id="why-us" style="background-color: #110a06;">
+    <section id="why-us" style="background-color: var(--footer-bg); transition: background 0.4s;">
         <h2 class="section-title reveal"><span class="ar">لماذا نحن خيارك الأول؟</span><span class="en">Why Choose Us?</span><span class="ur">ہمیں کیوں چنیں؟</span></h2>
         <div class="grid-container">
             <div class="feature-card reveal">
@@ -474,6 +505,7 @@
         
         <address class="contact-info reveal" style="font-style: normal;">
             <p><i class="fas fa-phone"></i> <span class="ar">رقم الجوال: </span><span class="en">Mobile: </span><span class="ur">موبائل: </span><a href="tel:0544784287" style="color:var(--text-light); text-decoration:none; direction:ltr; display:inline-block;">0544784287</a></p>
+            <p><i class="fas fa-envelope"></i> <span class="ar">البريد الإلكتروني: </span><span class="en">Email: </span><span class="ur">ای میل: </span><a href="mailto:wshfbakm@gmail.com" style="color:var(--text-light); text-decoration:none;">wshfbakm@gmail.com</a></p>
             <p><i class="fas fa-map-marker-alt"></i> <span class="ar">العنوان: </span><span class="en">Address: </span><span class="ur">پتہ: </span><span style="color:var(--text-light);">شارع بحر العرب، اليرموك، الرياض 13251</span></p>
         </address>
         
@@ -580,7 +612,32 @@
             setLanguage(langs[currentLangIndex]);
         });
 
+        // نظام تبديل الثيم (Dark / Light Mode)
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const htmlElement = document.documentElement;
+        
+        function setTheme(theme) {
+            htmlElement.setAttribute('data-theme', theme);
+            localStorage.setItem('siteTheme', theme);
+            // تغيير الأيقونة
+            if(theme === 'light') {
+                themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
+            // استرجاع لغة الموقع
             const savedLang = localStorage.getItem('siteLang');
             if (savedLang && langs.includes(savedLang)) {
                 currentLangIndex = langs.indexOf(savedLang);
@@ -593,6 +650,14 @@
                 
                 currentLangIndex = langs.indexOf(defaultLang);
                 setLanguage(defaultLang);
+            }
+
+            // استرجاع ثيم الموقع
+            const savedTheme = localStorage.getItem('siteTheme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                setTheme('dark'); // الوضع الافتراضي
             }
         });
 
