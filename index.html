@@ -10,7 +10,7 @@
     <meta name="geo.placename" content="Riyadh" />
     <meta name="geo.position" content="24.8143;46.7797" /> <meta name="ICBM" content="24.8143, 46.7797" />
     
-    <meta name="google-site-verification" content="AYuxvjuKALjaswt2OS-6u_ZCeMoM-7SDZMdq_AEWZ0g" />
+    <meta name="google-site-verification" content="g59K3fKJ69NlqSusW_cXoa4Y173DZSzXR3SuJEX9L0c" />
 
     <meta property="og:title" content="مؤسسة يحي آل عمر | للديكور الخشبي والألمونيوم">
     <meta property="og:description" content="أرقى خدمات النجارة والألمونيوم بلمسات فنية إبداعية من ورشتنا في الرياض (حي اليرموك).">
@@ -28,7 +28,10 @@
       "@type": "HomeAndConstructionBusiness",
       "name": "مؤسسة يحي أحمد يحي ال عمر للتجارة",
       "alternateName": "Yahya Ahmed Yahya Al Omar Est.",
-      "image": "https://imgg.io/images/2026/03/24/1d99f19a6912d93f7a9a9a6f8389c4b1.png",
+      "image": [
+        "https://imgg.io/images/2026/03/24/1d99f19a6912d93f7a9a9a6f8389c4b1.png",
+        "https://imgg.io/images/2026/03/24/f74c90ae3277f9e7dcb488dc49ade8da.jpg"
+      ],
       "telephone": "+966544784287",
       "email": "wshfbakm@gmail.com",
       "address": {
@@ -88,9 +91,9 @@
         :root[data-theme="light"] {
             --bg-color: #fdfbf7; 
             --surface-color: #f4ece6; 
-            --gold-primary: #b8860b; /* ذهبي أغمق للتباين */
+            --gold-primary: #b8860b; 
             --gold-light: #8b6508; 
-            --text-light: #2b1d14; /* نصوص بنية داكنة */
+            --text-light: #2b1d14; 
             --text-muted: #5a4031; 
             --silver: #8b5a2b; 
             --header-bg: linear-gradient(90deg, #fdfbf7 0%, #f4ece6 50%, #fdfbf7 100%);
@@ -212,11 +215,24 @@
         .hero p { max-width: 800px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 30px; padding: 0 15px; font-weight: 500;}
 
         /* من نحن والخدمات */
+        .about-section { display: flex; flex-direction: column; gap: 30px; }
+        @media (min-width: 768px) {
+            .about-section { flex-direction: row; align-items: center; }
+            .about-text-container { flex: 1; }
+            .about-image-container { flex: 1; text-align: center; }
+        }
+        
         .about-text {
             background: var(--card-bg); padding: 40px; border-radius: 15px; transition: background 0.4s;
             border: 1px solid var(--gold-primary); text-align: center; font-size: 1.1rem; line-height: 1.9;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1), inset 0 0 15px rgba(210, 139, 75, 0.05);
         }
+
+        .shop-image {
+            width: 100%; max-width: 500px; border-radius: 15px; border: 2px solid var(--gold-primary);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: transform 0.3s;
+        }
+        .shop-image:hover { transform: scale(1.02); }
         
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
@@ -425,10 +441,19 @@
 
     <section id="about">
         <h2 class="section-title reveal"><span class="ar">من نحن</span><span class="en">About Us</span><span class="ur">ہمارے بارے میں</span></h2>
-        <div class="about-text reveal">
-            <span class="ar"><strong>مؤسسة يحي أحمد يحي ال عمر للتجارة،</strong> هي ورشة عمل فعلية متخصصة في عالم الديكورات الخشبية وأعمال الألمونيوم بالرياض. نمتلك سنوات من الخبرة الواسعة في تقديم حلول متكاملة تلبي تطلعات عملائنا. نجمع بين المهارة الحرفية لأعمال النجارة والتقنيات الحديثة في تشكيل الألمونيوم، لنقدم لك نتائج مبهرة بجودة لا تضاهى وتصاميم تعيش لأجيال.</span>
-            <span class="en"><strong>Yahya Ahmed Yahya Al Omar Trading Foundation</strong> is a physical workshop specializing in wooden decors and aluminum works in Riyadh. We have years of experience providing comprehensive solutions, combining craftsmanship with modern aluminum techniques.</span>
-            <span class="ur"><strong>یحیی احمد یحیی آل عمر فاؤنڈیشن،</strong> ریاض میں لکڑی اور ایلومینیم کی سجاوٹ کی ایک ورکشاپ ہے۔ ہمارے پاس لکڑی اور ایلومینیم کے بہترین حل فراہم کرنے کا سالوں کا تجربہ ہے۔</span>
+        
+        <div class="about-section reveal">
+            <div class="about-text-container">
+                <div class="about-text">
+                    <span class="ar"><strong>مؤسسة يحي أحمد يحي ال عمر للتجارة،</strong> هي ورشة عمل فعلية متخصصة في عالم الديكورات الخشبية وأعمال الألمونيوم بالرياض. نمتلك سنوات من الخبرة الواسعة في تقديم حلول متكاملة تلبي تطلعات عملائنا. نجمع بين المهارة الحرفية لأعمال النجارة والتقنيات الحديثة في تشكيل الألمونيوم، لنقدم لك نتائج مبهرة بجودة لا تضاهى وتصاميم تعيش لأجيال.</span>
+                    <span class="en"><strong>Yahya Ahmed Yahya Al Omar Trading Foundation</strong> is a physical workshop specializing in wooden decors and aluminum works in Riyadh. We have years of experience providing comprehensive solutions, combining craftsmanship with modern aluminum techniques.</span>
+                    <span class="ur"><strong>یحیی احمد یحیی آل عمر فاؤنڈیشن،</strong> ریاض میں لکڑی اور ایلومینیم کی سجاوٹ کی ایک ورکشاپ ہے۔ ہمارے پاس لکڑی اور ایلومینیم کے بہترین حل فراہم کرنے کا سالوں کا تجربہ ہے۔</span>
+                </div>
+            </div>
+            
+            <div class="about-image-container">
+                <img src="https://imgg.io/images/2026/03/24/f74c90ae3277f9e7dcb488dc49ade8da.jpg" alt="واجهة ورشة مؤسسة يحي آل عمر" class="shop-image">
+            </div>
         </div>
     </section>
 
