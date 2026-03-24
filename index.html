@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مؤسسة يحي أحمد يحي ال عمر للتجارة ورشة متخصصة في الديكور الخشبي والألمونيوم بالرياض. نخدم حي اليرموك وكافة أحياء الرياض. تفصيل غرف، مطابخ، خزائن، وأبواب.">
+    <meta name="keywords" content="نجار, فني المونيوم, ورشة نجارة, المونيوم الرياض, تفصيل خزائن, غرف نوم, ديكورات خشبية, مطابخ المونيوم, مؤسسة يحي ال عمر, حي اليرموك">
+    
+    <meta name="geo.region" content="SA-01" />
+    <meta name="geo.placename" content="Riyadh" />
+    <meta name="geo.position" content="24.8143;46.7797" /> <meta name="ICBM" content="24.8143, 46.7797" />
+    
+    <meta name="google-site-verification" content="AYuxvjuKALjaswt2OS-6u_ZCeMoM-7SDZMdq_AEWZ0g" />
+
+    <meta property="og:title" content="مؤسسة يحي آل عمر | للديكور الخشبي والألمونيوم">
+    <meta property="og:description" content="أرقى خدمات النجارة والألمونيوم بلمسات فنية إبداعية من ورشتنا في الرياض (حي اليرموك).">
+    <meta property="og:image" content="https://imgg.io/images/2026/03/24/1d99f19a6912d93f7a9a9a6f8389c4b1.png">
+    <meta property="og:type" content="business.business">
+
+    <title>مؤسسة يحي أحمد يحي ال عمر للتجارة | ورشة تفصيل ديكور وألمنيوم</title>
+    
+    <link rel="icon" href="https://imgg.io/images/2026/03/24/1d99f19a6912d93f7a9a9a6f8389c4b1.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://imgg.io/images/2026/03/24/1d99f19a6912d93f7a9a9a6f8389c4b1.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "مؤسسة يحي أحمد يحي ال عمر للتجارة",
+      "alternateName": "Yahya Ahmed Yahya Al Omar Est.",
+      "image": "https://imgg.io/images/2026/03/24/1d99f19a6912d93f7a9a9a6f8389c4b1.png",
+      "telephone": "+966544784287",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "شارع بحر العرب",
+        "addressLocality": "حي اليرموك",
+        "addressRegion": "الرياض",
+        "postalCode": "13251",
+        "addressCountry": "SA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 24.8143,
+        "longitude": 46.7797
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Saturday",
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      "url": "https://yourwebsite.com", 
+      "sameAs": [
+        "https://wa.me/966544784287"
+      ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ================= المتغيرات والألوان (ثيم الخشب الملكي والذهبي) ================= */
+        :root {
+            --bg-color: #160e08; 
+            --surface-color: #2b1d14; 
+            --gold-primary: #d4af37; 
+            --gold-light: #f3e5ab; 
+            --text-light: #f4ece6; 
+            --text-muted: #b8a598; 
+            --silver: #a07855; 
+        }
+
+        /* الإعدادات العامة والخطوط */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; }
+        html, body { width: 100%; overflow-x: hidden; }
+        body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.6; padding-bottom: 90px; }
+        body.no-scroll { overflow: hidden; }
+
+        /* ================= نظام الـ 3 لغات (AR / EN / UR) ================= */
+        html[lang="ar"] .en, html[lang="ar"] .ur { display: none; }
+        html[lang="en"] .ar, html[lang="en"] .ur { display: none; }
+        html[lang="ur"] .ar, html[lang="ur"] .en { display: none; }
+        html[lang="en"] { direction: ltr; }
+        html[lang="ur"] { direction: rtl; }
+
+        /* شاشة التحميل (Loader) */
+        #loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--bg-color), var(--surface-color)); z-index: 99999;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        #loader.hidden { opacity: 0; visibility: hidden; }
+        .loader-content { text-align: center; display: flex; flex-direction: column; align-items: center; }
+        
+        .loader-image-frame {
+            width: 160px; height: 160px; border-radius: 50%;
+            background: radial-gradient(circle, var(--surface-color) 0%, var(--bg-color) 100%);
+            border: 4px solid transparent; border-top-color: var(--gold-primary); border-bottom-color: var(--gold-primary);
+            box-shadow: 0 0 30px rgba(210, 139, 75, 0.2), inset 0 0 15px rgba(210, 139, 75, 0.1);
+            display: flex; justify-content: center; align-items: center; margin-bottom: 25px; position: relative;
+            animation: spinGlow 2s linear infinite;
+        }
+        
+        .loader-image-frame img { 
+            width: 100px; height: auto; object-fit: cover; border-radius: 50%;
+            filter: drop-shadow(0 0 15px rgba(210, 139, 75, 0.6)); animation: counterSpinPulse 2s linear infinite;
+        }
+
+        @keyframes spinGlow {
+            0% { transform: rotate(0deg); box-shadow: 0 0 20px rgba(210, 139, 75, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(210, 139, 75, 0.6); }
+            100% { transform: rotate(360deg); box-shadow: 0 0 20px rgba(210, 139, 75, 0.2); }
+        }
+        @keyframes counterSpinPulse {
+            0% { transform: rotate(0deg) scale(0.95); }
+            50% { transform: rotate(-180deg) scale(1.1); }
+            100% { transform: rotate(-360deg) scale(0.95); }
+        }
+        
+        .loading-text { color: var(--gold-light); font-size: 1.1rem; font-weight: 500; margin-top: 10px; }
+        .dots::after { content: ''; animation: dotsLoader 1.5s steps(4, end) infinite; }
+        @keyframes dotsLoader { 0%, 20% { content: ''; } 40% { content: '.'; } 60% { content: '..'; } 80%, 100% { content: '...'; } }
+
+        /* الرأس (Header) */
+        header {
+            background: linear-gradient(90deg, #110a06 0%, #2b1d14 50%, #110a06 100%);
+            padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid var(--gold-primary); box-shadow: 0 4px 15px rgba(210, 139, 75, 0.15);
+        }
+        .header-right { display: flex; align-items: center; gap: 15px; }
+        .site-title { color: var(--gold-primary); font-size: 1.1rem; font-weight: 800; white-space: nowrap; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+        .menu-btn { color: var(--gold-primary); font-size: 1.5rem; cursor: pointer; background: none; border: none; transition: 0.3s; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5)); }
+        .menu-btn:hover { transform: scale(1.1); color: var(--gold-light); }
+        .lang-btn {
+            background: rgba(210, 139, 75, 0.1); border: 1px solid var(--gold-primary); color: var(--gold-primary);
+            padding: 4px 10px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: 0.3s; font-family: sans-serif;
+        }
+        .lang-btn:hover { background: var(--gold-primary); color: var(--bg-color); box-shadow: 0 0 10px var(--gold-primary); }
+
+        /* القائمة الجانبية */
+        .side-menu {
+            position: fixed; top: 60px; width: 250px; height: calc(100vh - 60px);
+            background: linear-gradient(180deg, var(--surface-color) 0%, var(--bg-color) 100%);
+            transition: 0.4s; z-index: 999; padding-top: 20px;
+            right: -100%; border-left: 2px solid var(--gold-primary);
+        }
+        html[lang="ar"] .side-menu.active, html[lang="ur"] .side-menu.active { right: 0; }
+        html[lang="en"] .side-menu { left: -100%; right: auto; border-right: 2px solid var(--gold-primary); border-left: none; }
+        html[lang="en"] .side-menu.active { left: 0; }
+        .side-menu a {
+            display: block; padding: 15px 20px; color: var(--text-light); text-decoration: none;
+            font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; font-weight: 500;
+        }
+        html[lang="ar"] .side-menu a:hover, html[lang="ur"] .side-menu a:hover { color: var(--gold-primary); padding-right: 30px; background: rgba(210, 139, 75, 0.1); }
+        html[lang="en"] .side-menu a:hover { color: var(--gold-primary); padding-left: 30px; background: rgba(210, 139, 75, 0.1); }
+
+        /* الأقسام العامة */
+        section { padding: 100px 5% 50px; }
+        .section-title { text-align: center; color: var(--gold-primary); font-size: 2.5rem; margin-bottom: 40px; position: relative; font-weight: 800; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold-primary); margin: 10px auto; border-radius: 2px; box-shadow: 0 0 8px var(--gold-primary); }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* الرئيسية */
+        .hero {
+            text-align: center; padding-top: 150px; min-height: 80vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; 
+            background: radial-gradient(circle at center, #352317 0%, #160e08 100%);
+        }
+        .hero h1 {
+            color: var(--gold-primary); font-size: clamp(1.6rem, 4vw, 2.5rem); max-width: 900px;
+            line-height: 1.5; margin-bottom: 20px; text-shadow: 0 4px 15px rgba(0,0,0,0.8); padding: 0 10px;
+        }
+        .hero p { max-width: 800px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 30px; padding: 0 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+
+        /* من نحن والخدمات */
+        .about-text {
+            background: linear-gradient(145deg, #2b1d14, #1a110a); padding: 40px; border-radius: 15px;
+            border: 1px solid var(--gold-primary); text-align: center; font-size: 1.1rem; line-height: 1.9;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 15px rgba(210, 139, 75, 0.05);
+        }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .service-card {
+            background: linear-gradient(145deg, #2b1d14, #160e08); 
+            border: 2px solid var(--gold-primary); border-radius: 15px; padding: 35px 20px; text-align: center; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5), inset 0 0 10px rgba(210, 139, 75, 0.1);
+            position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(210, 139, 75, 0.2), transparent);
+            transform: skewX(-20deg); transition: 0.6s;
+        }
+        .service-card:hover::before { left: 150%; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(210, 139, 75, 0.25); background: #22150e; }
+        
+        .icon-3d-wrapper {
+            width: 75px; height: 75px; margin: 0 auto 20px; border-radius: 50%;
+            background: linear-gradient(145deg, #3a271c, #1f140e);
+            box-shadow: 5px 5px 10px #0e0906, -5px -5px 10px #322118;
+            border: 1px solid rgba(210, 139, 75, 0.4);
+            display: flex; justify-content: center; align-items: center; transition: 0.4s;
+        }
+        .icon-3d-wrapper i { font-size: 2.2rem; color: var(--gold-primary); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); transition: 0.4s; }
+        .service-card:hover .icon-3d-wrapper { border-color: var(--gold-primary); transform: scale(1.1) rotate(5deg); }
+        .service-card:hover .icon-3d-wrapper i { color: #fff; text-shadow: 0 0 10px var(--gold-primary); }
+        
+        .service-card h3 { color: var(--gold-light); margin-bottom: 15px; font-size: 1.4rem; font-weight: 800; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; text-align: justify; text-align-last: center; }
+
+        .feature-card { text-align: center; padding: 25px 20px; background: rgba(43, 29, 20, 0.6); border-radius: 15px; border: 1px dashed var(--gold-primary); transition: 0.3s; }
+        .feature-card:hover { border-style: solid; background: rgba(43, 29, 20, 0.9); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(210, 139, 75, 0.1); }
+        .feature-card .icon-3d-wrapper { width: 80px; height: 80px; margin-bottom: 15px; background: transparent; box-shadow: none; border: 2px solid var(--gold-primary); }
+        .feature-card .icon-3d-wrapper i { font-size: 2.4rem; }
+        .feature-card h3 { margin-bottom: 10px; color: var(--text-light); }
+        .feature-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+
+        /* ================= تواصل معنا والخريطة ================= */
+        .contact-info { text-align: center; margin-bottom: 40px; padding: 0 10px; }
+        .contact-info p { font-size: 1rem; margin-bottom: 15px; word-wrap: break-word; font-weight: 500; }
+        html[lang="ar"] .contact-info i, html[lang="ur"] .contact-info i { margin-left: 10px; color: var(--gold-primary); font-size: 1.2rem; }
+        html[lang="en"] .contact-info i { margin-right: 10px; color: var(--gold-primary); font-size: 1.2rem; }
+        .contact-info a { color: var(--text-light); transition: 0.3s; font-weight: 700; }
+        .contact-info a:hover { color: var(--gold-primary); }
+        
+        .map-container { 
+            position: relative; border-radius: 20px; overflow: hidden; 
+            border: 2px solid var(--gold-primary); height: 450px; width: 100%; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+        
+        /* فلتر الخريطة التضاريسية */
+        .map-container iframe { 
+            width: 100% !important; height: 100% !important; border: none; 
+            filter: contrast(1.1) saturate(1.3) sepia(0.3) hue-rotate(-15deg); 
+        }
+        
+        .map-pin-center { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            pointer-events: none; z-index: 10; display: flex; flex-direction: column; align-items: center; 
+        }
+        .map-pin-icon { 
+            color: #e74c3c; font-size: 3.5rem; margin-bottom: 5px; 
+            animation: bouncePin 1.5s infinite cubic-bezier(0.28, 0.84, 0.42, 1); 
+            filter: drop-shadow(0 5px 8px rgba(0,0,0,0.9)); text-shadow: 0 0 15px rgba(210, 139, 75, 0.5); 
+        }
+        @keyframes bouncePin { 0% { transform: translateY(0); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0); } }
+        
+        .map-tooltip {
+            background: rgba(26, 17, 10, 0.95); backdrop-filter: blur(8px);
+            color: var(--gold-light); padding: 8px 18px; border-radius: 8px; font-weight: bold; 
+            border: 1px solid var(--gold-primary); font-size: 0.9rem; white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(210, 139, 75, 0.3); animation: pulseTooltip 2s infinite; position: relative; margin-bottom: 5px;
+        }
+        .map-tooltip::after {
+            content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
+            border-width: 6px 6px 0 6px; border-style: solid; border-color: var(--gold-primary) transparent transparent transparent;
+        }
+
+        @keyframes pulseTooltip {
+            0% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0.5); }
+            70% { box-shadow: 0 0 0 10px rgba(210, 139, 75, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0); }
+        }
+
+        .service-area-badge {
+            position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);
+            background: rgba(0,0,0,0.8); color: var(--gold-light); padding: 6px 20px; border-radius: 20px; font-size: 0.85rem; border: 1px dashed var(--gold-primary);
+            pointer-events: none; z-index: 10; font-weight: 700;
+        }
+
+        /* ================= البار السفلي ================= */
+        .bottom-nav {
+            position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%);
+            background: linear-gradient(90deg, #110a06 0%, #2b1d14 50%, #110a06 100%); border: 1px solid var(--gold-primary);
+            border-radius: 35px; display: flex; justify-content: space-around; align-items: center;
+            padding: 5px 10px; width: 90%; max-width: 450px; z-index: 1000; backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+        }
+        .bottom-nav a {
+            color: var(--text-light); text-decoration: none; font-size: 1.1rem; padding: 6px; border-radius: 12px; transition: 0.3s;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; flex: 1; text-align: center;
+        }
+        .bottom-nav a:hover, .bottom-nav a:active { color: var(--gold-primary); transform: translateY(-3px); }
+        .nav-text { font-size: 0.65rem; font-weight: 700; }
+
+        /* ================= الأزرار العائمة ================= */
+        .floating-action-menu { position: fixed; bottom: 95px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+        .float-btn {
+            width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem;
+            text-decoration: none; color: white; border: 2px solid white; transition: transform 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        .float-btn:hover { transform: scale(1.1) rotate(5deg); }
+        .call-btn { background-color: var(--gold-primary); animation: pulseCall 2s infinite; animation-delay: 1s; border-color: var(--gold-primary); color: #000; }
+        .wa-btn { background-color: #25d366; animation: pulseWA 2s infinite; border-color: #25d366; }
+
+        @keyframes pulseWA { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+        @keyframes pulseCall { 0% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(210, 139, 75, 0); } 100% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0); } }
+
+        /* التذييل */
+        footer { text-align: center; padding: 40px 15px 100px; background-color: #080503; border-top: 2px solid var(--surface-color); }
+        .copyright { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; }
+        .designer-badge, .designer-badge-loader { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--silver); padding: 8px 18px; border-radius: 30px; text-decoration: none; background: linear-gradient(145deg, #2b1d14, #1a110a); transition: 0.3s; text-align: center; max-width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .designer-badge span, .designer-badge-loader span { color: var(--silver); font-weight: bold; font-size: 0.75rem; text-shadow: 0 0 5px rgba(0, 0, 0, 0.8); white-space: normal; transition: 0.3s; }
+        .designer-badge:hover { background: var(--gold-primary); border-color: var(--gold-primary); transform: translateY(-3px); }
+        .designer-badge:hover span { color: #000; text-shadow: none; }
+
+        /* ================= التجاوب للشاشات الصغيرة ================= */
+        @media (max-width: 768px) {
+            section { padding: 80px 5% 40px; }
+            .section-title { font-size: 1.8rem; margin-bottom: 30px; }
+            .hero { padding-top: 100px; min-height: 70vh; }
+            .hero h1 { font-size: 1.5rem; }
+            .hero p { font-size: 0.95rem; }
+            .about-text { padding: 25px 15px; font-size: 1rem; line-height: 1.7; }
+            .grid-container { grid-template-columns: 1fr; gap: 20px; }
+            .service-card { padding: 25px 15px; }
+            .map-container { height: 350px; }
+            .bottom-nav { width: 95%; bottom: 10px; }
+            .floating-action-menu { bottom: 85px; right: 15px; } 
+            .float-btn { width: 42px; height: 42px; font-size: 1.2rem; }
+            header .site-title { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-image-frame">
+                <img src="https://imgg.io/images/2026/03/24/1d99f19a6912d93f7a9a9a6f8389c4b1.png" alt="شعار مؤسسة يحي آل عمر">
+            </div>
+            <p class="loading-text">
+                <span class="ar">جاري تجهيز الموقع</span>
+                <span class="en">Loading Website</span>
+                <span class="ur">ویب سائٹ لوڈ ہو رہی ہے</span>
+                <span class="dots"></span>
+            </p>
+        </div>
+        <div class="loader-footer">
+            <div class="designer-badge-loader">
+                <span class="ar">👑 تم التصميم بواسطة المهندس إسلام الشيخ 👑</span>
+                <span class="en">👑 Designed by Eng. Islam Elsheikh 👑</span>
+                <span class="ur">👑 انجینئر اسلام الشیخ کے ذریعہ ڈیزائن کیا گیا 👑</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-right">
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            <div class="site-title">
+                <span class="ar">مؤسسة يحي آل عمر</span>
+                <span class="en">Yahya Al Omar Est</span>
+                <span class="ur">یحیی آل عمر فاؤنڈیشن</span>
+            </div>
+        </div>
+        <button id="langToggleBtn" class="lang-btn">EN</button>
+    </header>
+
+    <div class="side-menu" id="sideMenu">
+        <a href="#hero" onclick="toggleMenu()"><span class="ar">الرئيسية</span><span class="en">Home</span><span class="ur">ہوم</span></a>
+        <a href="#about" onclick="toggleMenu()"><span class="ar">من نحن</span><span class="en">About Us</span><span class="ur">ہمارے بارے میں</span></a>
+        <a href="#services" onclick="toggleMenu()"><span class="ar">خدماتنا</span><span class="en">Services</span><span class="ur">ہماری خدمات</span></a>
+        <a href="#why-us" onclick="toggleMenu()"><span class="ar">لماذا نحن</span><span class="en">Why Us</span><span class="ur">ہمیں کیوں چنیں</span></a>
+        <a href="#contact" onclick="toggleMenu()"><span class="ar">تواصل معنا</span><span class="en">Contact</span><span class="ur">رابطہ کریں</span></a>
+    </div>
+
+    <section id="hero" class="hero reveal">
+        <h1>
+            <span class="ar">مؤسسة يحي أحمد يحي ال عمر للتجارة | للديكور الخشبي والألمونيوم</span>
+            <span class="en">Yahya Ahmed Yahya Al Omar Est. | Wooden & Aluminum Decors</span>
+            <span class="ur">یحیی احمد یحیی آل عمر فاؤنڈیشن | لکڑی اور ایلومینیم کی سجاوٹ</span>
+        </h1>
+        <p>
+            <span class="ar">هل تبحث عن الجودة والاحترافية؟ نحن ورشة فعلية متكاملة نقدم أرقى خدمات النجارة وتفصيل الألمونيوم. من غرف النوم والخزائن إلى المطابخ وأبواب الألمونيوم. نتميز بالدقة في التنفيذ وتوفير أفضل الخامات بأسعار تنافسية. تفضل بزيارتنا في حي اليرموك، شارع بحر العرب، أو تواصل معنا لتنفيذ كافة أعمال الديكور الخشبي والألمونيوم المودرن والكلاسيك.</span>
+            <span class="en">Looking for quality and professionalism? We are an integrated workshop offering the finest carpentry and aluminum services. From bedrooms and cabinets to kitchens and aluminum doors. Visit us in Al Yarmouk district, Arabian Sea St.</span>
+            <span class="ur">کیا آپ معیار اور پیشہ ورانہ مہارت تلاش کر رہے ہیں؟ ہم لکڑی اور ایلومینیم کا بہترین کام فراہم کرنے والی ایک ورکشاپ ہیں۔ بحر العرب سٹریٹ، الیرموک میں ہم سے ملیں۔</span>
+        </p>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title reveal"><span class="ar">من نحن</span><span class="en">About Us</span><span class="ur">ہمارے بارے میں</span></h2>
+        <div class="about-text reveal">
+            <span class="ar"><strong>مؤسسة يحي أحمد يحي ال عمر للتجارة،</strong> هي ورشة عمل فعلية متخصصة في عالم الديكورات الخشبية وأعمال الألمونيوم بالرياض. نمتلك سنوات من الخبرة الواسعة في تقديم حلول متكاملة تلبي تطلعات عملائنا. نجمع بين المهارة الحرفية لأعمال النجارة والتقنيات الحديثة في تشكيل الألمونيوم، لنقدم لك نتائج مبهرة بجودة لا تضاهى وتصاميم تعيش لأجيال.</span>
+            <span class="en"><strong>Yahya Ahmed Yahya Al Omar Trading Foundation</strong> is a physical workshop specializing in wooden decors and aluminum works in Riyadh. We have years of experience providing comprehensive solutions, combining craftsmanship with modern aluminum techniques.</span>
+            <span class="ur"><strong>یحیی احمد یحیی آل عمر فاؤنڈیشن،</strong> ریاض میں لکڑی اور ایلومینیم کی سجاوٹ کی ایک ورکشاپ ہے۔ ہمارے پاس لکڑی اور ایلومینیم کے بہترین حل فراہم کرنے کا سالوں کا تجربہ ہے۔</span>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title reveal"><span class="ar">خدماتنا</span><span class="en">Our Services</span><span class="ur">ہماری خدمات</span></h2>
+        <div class="grid-container">
+            <div class="service-card reveal" onclick="this.classList.toggle('active')">
+                <div class="icon-3d-wrapper"><i class="fas fa-hammer"></i></div>
+                <div class="icon-3d-wrapper"><i class="fas fa-box-open"></i></div>
+                <h3><span class="ar">تفصيل خزائن ودواليب</span><span class="en">Custom Cabinets & Wardrobes</span><span class="ur">الماریاں اور الماریاں</span></h3>
+                <p><span class="ar">تصميم وتنفيذ خزائن ودواليب عملية وأنيقة تناسب كافة المساحات بأجود أنواع الأخشاب، مع تقسيمات داخلية تلبي احتياجك اليومي وتضمن لك الترتيب.</span><span class="en">Design and execution of practical custom cabinets and wardrobes with the highest quality wood and smart internal divisions.</span><span class="ur">بہترین لکڑی کی الماریوں اور وارڈروبس کی ڈیزائننگ اور تیاری۔</span></p>
+            </div>
+            
+            <div class="service-card reveal" onclick="this.classList.toggle('active')">
+                <div class="icon-3d-wrapper"><i class="fas fa-door-closed"></i></div>
+                <h3><span class="ar">أبواب وشبابيك ألمنيوم</span><span class="en">Aluminum Doors & Windows</span><span class="ur">ایلومینیم کے دروازے اور کھڑکیاں</span></h3>
+                <p><span class="ar">تفصيل وتركيب أبواب ونوافذ الألمنيوم بقطاعات قوية ومتينة وعازلة للصوت والحرارة، تناسب الواجهات والمداخل بتصاميم عصرية.</span><span class="en">Customizing and installing high-quality aluminum doors and windows with sound and heat insulation.</span><span class="ur">اعلی معیار کے ایلومینیم کے دروازے اور کھڑکیاں جو آواز اور گرمی سے محفوظ رکھیں۔</span></p>
+            </div>
+            
+            <div class="service-card reveal" onclick="this.classList.toggle('active')">
+                <div class="icon-3d-wrapper"><i class="fas fa-utensils"></i></div>
+                <h3><span class="ar">تصميم وتركيب المطابخ</span><span class="en">Kitchen Design & Install</span><span class="ur">باورچی خانے کا ڈیزائن</span></h3>
+                <p><span class="ar">نقدم تصاميم عصرية للمطابخ سواء الخشبية أو الألمنيوم أو الكلادينج. استغلال ذكي للمساحات بألوان تناسب ذوقك وتتحمل الاستخدام الشاق.</span><span class="en">Modern kitchen designs in wood, aluminum, or cladding. Smart use of space with durable materials.</span><span class="ur">لکڑی اور ایلومینیم میں جدید کچن ڈیزائن۔</span></p>
+            </div>
+
+            <div class="service-card reveal" onclick="this.classList.toggle('active')">
+                <div class="icon-3d-wrapper"><i class="fas fa-bed"></i></div>
+                <h3><span class="ar">غرف نوم وموبيليا</span><span class="en">Bedrooms & Furniture</span><span class="ur">بیڈ رومز اور فرنیچر</span></h3>
+                <p><span class="ar">غرف نوم رئيسية تعكس الفخامة بتفاصيل متقنة، بالإضافة لتفصيل طاولات وجلسات تمنحك بيئة دافئة ومريحة.</span><span class="en">Master bedrooms and furniture reflecting luxury with exquisite details tailored to your taste.</span><span class="ur">آرام دہ بیڈ رومز اور فرنیچر کی تیاری جو آپ کے ذوق کے مطابق ہوں۔</span></p>
+            </div>
+
+            <div class="service-card reveal" onclick="this.classList.toggle('active')">
+                <div class="icon-3d-wrapper"><i class="fas fa-th-large"></i></div>
+                <h3><span class="ar">بديل الشيبورد والتكسيات</span><span class="en">Cladding & Chipboard Alternatives</span><span class="ur">لکڑی کی پینلنگ</span></h3>
+                <p><span class="ar">تكسيات جدارية راقية وبديل الشيبورد لإضفاء فخامة استثنائية على مساحتك. خامات معالجة لمقاومة الرطوبة وتصاميم تخطف الأنظار.</span><span class="en">Elegant wall cladding and chipboard alternatives for exceptional luxury. Treated moisture-resistant materials.</span><span class="ur">جدید اور پائیدار پینلنگ کے ذریعے دیواروں کی شاندار سجاوٹ۔</span></p>
+            </div>
+
+            <div class="service-card reveal" onclick="this.classList.toggle('active')">
+                <div class="icon-3d-wrapper"><i class="fas fa-tools"></i></div>
+                <h3><span class="ar">صيانة النجارة والألمنيوم</span><span class="en">Carpentry & Aluminum Maintenance</span><span class="ur">لکڑی اور ایلومینیم کی مرمت</span></h3>
+                <p><span class="ar">خدمات صيانة وتصليح شاملة للأبواب، النوافذ، والموبيليا. تغيير المفصلات ومعالجة التشققات لتعود القطع لحالتها الأصلية.</span><span class="en">Comprehensive maintenance for doors, windows, and furniture. Hinge replacement and crack repairs.</span><span class="ur">دروازوں، کھڑکیوں اور فرنیچر کی مکمل مرمت۔</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" style="background-color: #110a06;">
+        <h2 class="section-title reveal"><span class="ar">لماذا نحن خيارك الأول؟</span><span class="en">Why Choose Us?</span><span class="ur">ہمیں کیوں چنیں؟</span></h2>
+        <div class="grid-container">
+            <div class="feature-card reveal">
+                <div class="icon-3d-wrapper"><i class="fas fa-store"></i></div>
+                <h3><span class="ar">ورشة عمل فعلية متكاملة</span><span class="en">Physical Integrated Workshop</span><span class="ur">باقاعدہ ورکشاپ</span></h3>
+                <p><span class="ar">نحن لسنا مجرد وسطاء، بل نمتلك ورشتنا الخاصة مما يضمن لك الإشراف المباشر على جودة العمل وتقليل التكاليف.</span><span class="en">We own our workshop, ensuring direct supervision of quality and reduced costs without middlemen.</span><span class="ur">ہمارے پاس اپنی ورکشاپ ہے جو اعلیٰ معیار اور مناسب قیمت کی ضمانت دیتی ہے۔</span></p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="icon-3d-wrapper"><i class="fas fa-medal"></i></div>
+                <h3><span class="ar">دقة في العمل وتنوع في الخامات</span><span class="en">Precision & Variety</span><span class="ur">اعلی معیار اور تنوع</span></h3>
+                <p><span class="ar">نجمع بين أخشاب الديكور الفاخرة وقطاعات الألمنيوم القوية لنقدم لك خيارات لا حصر لها تناسب كافة الأذواق.</span><span class="en">We combine luxury wood and strong aluminum to offer limitless choices for all tastes.</span><span class="ur">ہم لکڑی اور ایلومینیم کا بہترین کام ایک ہی جگہ پر فراہم کرتے ہیں۔</span></p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="icon-3d-wrapper"><i class="fas fa-clock"></i></div>
+                <h3><span class="ar">التزام بالمواعيد والأسعار</span><span class="en">Commitment to Time & Price</span><span class="ur">وقت اور قیمت کی پابندی</span></h3>
+                <p><span class="ar">أسعارنا مدروسة ومنافسة للسوق، ونلتزم بتسليم وتركيب الأعمال في الوقت المتفق عليه تماماً.</span><span class="en">Competitive prices with strict commitment to delivery and installation schedules.</span><span class="ur">ہم آپ کو مناسب قیمتوں کے ساتھ وقت پر کام مکمل کر کے دیتے ہیں۔</span></p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="icon-3d-wrapper"><i class="fas fa-shield-alt"></i></div>
+                <h3><span class="ar">ضمان حقيقي لما بعد التنفيذ</span><span class="en">Post-Work Guarantee</span><span class="ur">کام کی گارنٹی</span></h3>
+                <p><span class="ar">نتواجد لخدمتك وصيانة أعمالك حتى بعد انتهاء التركيب والتسليم لضمان راحة بالك.</span><span class="en">We remain at your service for maintenance even after project completion.</span><span class="ur">ہم کام مکمل ہونے کے بعد بھی مرمت اور سروس کے لیے حاضر ہیں۔</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title reveal"><span class="ar">تواصل معنا</span><span class="en">Contact Us</span><span class="ur">رابطہ کریں</span></h2>
+        
+        <address class="contact-info reveal" style="font-style: normal;">
+            <p><i class="fas fa-phone"></i> <span class="ar">رقم الجوال: </span><span class="en">Mobile: </span><span class="ur">موبائل: </span><a href="tel:0544784287" style="color:var(--text-light); text-decoration:none; direction:ltr; display:inline-block;">0544784287</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> <span class="ar">العنوان: </span><span class="en">Address: </span><span class="ur">پتہ: </span><span style="color:var(--text-light);">شارع بحر العرب، اليرموك، الرياض 13251</span></p>
+        </address>
+        
+        <div class="map-container reveal">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d186.56458105615675!2d46.79222151863806!3d24.807374919029044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sar!2ssa!4v1774382799526!5m2!1sar!2ssa" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            <div class="map-pin-center">
+                <div class="map-tooltip">
+                    <span class="ar">مؤسسة يحي آل عمر للنجارة والألمونيوم</span>
+                    <span class="en">Yahya Al Omar Carpentry & Aluminum</span>
+                    <span class="ur">یحیی آل عمر لکڑی اور ایلومینیم</span>
+                </div>
+                <i class="fas fa-map-marker-alt map-pin-icon"></i>
+            </div>
+            
+            <div class="service-area-badge">
+                <span class="ar">المقر: حي اليرموك، شارع بحر العرب</span>
+                <span class="en">Location: Al Yarmouk, Arabian Sea St.</span>
+                <span class="ur">مقام: الیرموک، بحر العرب سٹریٹ</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="floating-action-menu">
+        <a href="tel:0544784287" class="float-btn call-btn" aria-label="Call">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/966544784287" class="float-btn wa-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="#hero">
+            <i class="fas fa-home"></i>
+            <span class="nav-text"><span class="ar">الرئيسية</span><span class="en">Home</span><span class="ur">ہوم</span></span>
+        </a>
+        <a href="#services">
+            <i class="fas fa-tools"></i>
+            <span class="nav-text"><span class="ar">خدماتنا</span><span class="en">Services</span><span class="ur">خدمات</span></span>
+        </a>
+        <a href="#why-us">
+            <i class="fas fa-star"></i>
+            <span class="nav-text"><span class="ar">لماذا نحن</span><span class="en">Why Us</span><span class="ur">خصوصیات</span></span>
+        </a>
+        <a href="#contact">
+            <i class="fas fa-phone-alt"></i>
+            <span class="nav-text"><span class="ar">تواصل</span><span class="en">Contact</span><span class="ur">رابطہ</span></span>
+        </a>
+    </nav>
+
+    <footer>
+        <div class="copyright">
+            <i class="fas fa-copyright"></i>
+            <span class="ar">جميع الحقوق محفوظة لدى : مؤسسة يحي أحمد يحي ال عمر للتجارة 2026</span>
+            <span class="en">All rights reserved to Yahya Ahmed Yahya Al Omar Est. 2026</span>
+            <span class="ur">جملہ حقوق محفوظ ہیں : یحیی احمد یحیی آل عمر فاؤنڈیشن 2026</span>
+        </div>
+        
+        <a href="https://wa.me/966547194788" target="_blank" class="designer-badge" rel="noopener noreferrer">
+            <span class="ar">👑 تم التصميم بواسطة المهندس إسلام الشيخ 👑</span>
+            <span class="en">👑 Designed by Eng. Islam Elsheikh 👑</span>
+            <span class="ur">👑 انجینئر اسلام الشیخ کے ذریعہ ڈیزائن کیا گیا 👑</span>
+        </a>
+    </footer>
+
+    <script>
+        // إعدادات شاشة التحميل
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.classList.add('hidden');
+                document.body.classList.remove('no-scroll');
+                setTimeout(() => { loader.style.display = 'none'; }, 500);
+            }, 3000); 
+        });
+
+        // القائمة الجانبية
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            sideMenu.classList.toggle('active');
+        }
+
+        // نظام الـ 3 لغات المطور (عربي -> إنجليزي -> أوردو)
+        const langBtn = document.getElementById('langToggleBtn');
+        const langs = ['ar', 'en', 'ur'];
+        let currentLangIndex = 0;
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            
+            let nextLangText = '';
+            if(lang === 'ar') nextLangText = 'EN';
+            else if(lang === 'en') nextLangText = 'اردو';
+            else if(lang === 'ur') nextLangText = 'AR';
+            
+            langBtn.innerText = nextLangText;
+            localStorage.setItem('siteLang', lang);
+            document.getElementById('sideMenu').classList.remove('active');
+        }
+
+        langBtn.addEventListener('click', () => {
+            currentLangIndex = (currentLangIndex + 1) % langs.length;
+            setLanguage(langs[currentLangIndex]);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('siteLang');
+            if (savedLang && langs.includes(savedLang)) {
+                currentLangIndex = langs.indexOf(savedLang);
+                setLanguage(savedLang);
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                let defaultLang = 'ar'; 
+                if(browserLang.toLowerCase().startsWith('en')) defaultLang = 'en';
+                else if(browserLang.toLowerCase().startsWith('ur')) defaultLang = 'ur';
+                
+                currentLangIndex = langs.indexOf(defaultLang);
+                setLanguage(defaultLang);
+            }
+        });
+
+        // كود الأنيميشن عند السكرول
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+
+            reveals.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        setTimeout(revealOnScroll, 3100); 
+    </script>
+</body>
+</html>
